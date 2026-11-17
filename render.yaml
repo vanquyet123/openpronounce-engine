@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: openpronounce-engine
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: OPENPRONOUNCE_API_KEY
+        sync: false
